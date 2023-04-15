@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <top>
+        <MenuBar prefWidth="647.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="openIMenu" mnemonicParsing="false" onAction="#openFolder" text="Open" />
+                        <MenuItem fx:id="closeIMenu" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                  <MenuItem fx:id="menuItemTXT" mnemonicParsing="false" onAction="#openTXT" text="Abrir TXT" />
+                  <MenuItem fx:id="itemGuardar" mnemonicParsing="false" onAction="#saveTXT" text="Guardar TXT" />
+
+
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.2981770833333333, 0.7421875" BorderPane.alignment="CENTER">
+            <items>
+                <TreeView fx:id="TreeViewFiles" onMouseClicked="#loadImg" prefHeight="250.0" prefWidth="250.0" SplitPane.resizableWithParent="false" />
+                <TabPane fx:id="tabPanelMain" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB">
+                    <tabs>
+                        <Tab text="Untitled Tab 1">
+                            <content>
+                                <ScrollPane>
+                                    <content>
+                                        <ImageView fx:id="ImgView" pickOnBounds="true" preserveRatio="true" />
+                                    </content>
+                                </ScrollPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Untitled Tab 2">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+                <Accordion prefHeight="470.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
+                    <panes>
+                        <TitledPane animated="false" prefHeight="420.0" prefWidth="171.0" text="untitled 1">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" prefHeight="416.0" prefWidth="173.0" text="untitled 2">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="146.0">
+                                    <children>
+                                        <Label layoutX="14.0" layoutY="22.0" text="Label" />
+                                        <TextField id="textArea1" fx:id="textArea1" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="164.0" />
+                                        <Label layoutX="14.0" layoutY="73.0" text="Label" />
+                                        <ComboBox id="comboBox1" fx:id="comboBox1" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="166.0" />
+                                        <CheckBox id="checkBox1" fx:id="ckBox1" layoutX="73.0" layoutY="141.0" mnemonicParsing="false" text="CheckBox" />
+                                        <ToggleButton id="tgButton1" fx:id="tgButton1" layoutX="29.0" layoutY="212.0" mnemonicParsing="false" selected="true" text="ToggleButton" textOverrun="CENTER_ELLIPSIS">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ToggleButton>
+                                        <Button id="button1" fx:id="button1" layoutX="72.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#readFormData" text="Button" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="untitled 3">
+                            <content>
+                                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Untitled Tab 1">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Untitled Tab 2">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </content>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+            </items>
+        </SplitPane>
+    </center>
+    <bottom>
+        <ToolBar fx:id="button2" prefHeight="0.0" prefWidth="681.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button mnemonicParsing="false" onMouseClicked="#increaseProgressBar" text="Button" />
+                <ToggleButton mnemonicParsing="false" text="ToggleButton" />
+                <ProgressBar fx:id="progress1" prefWidth="200.0" progress="0.0" />
+                <Label text="Label" />
+            </items>
+        </ToolBar>
+    </bottom>
+</BorderPane>
